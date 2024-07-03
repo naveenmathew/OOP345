@@ -1,0 +1,23 @@
+/*
+Name:Naveen Mathew
+StudentID : 1646464218
+mail: nmathew11@myseneca.ca
+Date: 16-06-2024
+
+In this workshop, I learned about using templates, functors, and lambda expressions in C++. For example, creating the Collection class helped me understand dynamic memory managment and callback functions. It was interesting to see how the class handled different types of collections, like books and movies.
+
+Using the SpellChecker functor to fix spelling mistakes was useful. It read a file with incorrect and correct words and made changes to descriptions. This showed the power of functors. On the other hand, I used a lambda expression to fix book prices. Lambdas are great for quick fixes because they’re simple and don’t need a whole class.
+
+Difference between Functor and Lambda Expression
+Functor: Good for maintaining state and complex logic across multiple calls. Used for the SpellChecker.
+Lambda Expression: Ideal for simple, temporary operations. Used to fix book prices.
+Handling Exceptions in SpellChecker
+Current Approach: Throws an exception if the file is missing.
+Alternative: Use a status flag to indicate success or failure.
+Constructor: SpellChecker(const char* filename, bool& success) { ... }
+Client Code: bool success; SpellChecker sc("file.txt", success); if (!success) { handle error; }
+Comparison: Exceptions are clearer and separate error handling from regular logic, while status flags avoid overhead but make code messier.
+Reducing Duplication in Movie and Book Classes
+Use a base class Media with a method loadFromString for shared logic, or a helper function parseMediaString to avoid duplicating code.
+Necessity of Default Constructors
+Default constructors provide flexibility for creating objects without immediate initialization. Removing them enforces stricter initialization but reduces flexibility. They are generally useful for creating arrays of objects or when immediate data is not available

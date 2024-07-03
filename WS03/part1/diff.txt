@@ -1,0 +1,14 @@
+In line number 41 of your output:
+The output should be:
+| Invalid book data |
+                    ^
+But your output is: 
+| Invalid book data  |
+                    ^
+
+Unmatched character details:
+The character in column 21 is supposed to be:
+  [|] ASCII code(124)
+but you printed
+  [Space] ASCII code(32)
+

@@ -1,0 +1,63 @@
+/*
+Name:Naveen Mathew
+StudentID : 1646464218
+mail: nmathew11@myseneca.ca
+Date: 09-06-2024
+
+I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my workshops and assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
+
+*/
+
+In this workshop, I learned about composition, aggregation, and association in C++.
+Composition is a "has-a" relationship where contained objects can't exist independently. The container object manages their lifetime. 
+Aggregation also represents a "has-a" relationship but contained objects can exist independently. An example is the `Restaurant` class with `Reservation` objects.
+Move vs Copy Functions:
+Copy functions create a duplicate of an object, involving deep copying of resources. Move functions transfer resources, leaving the source in a valid state. 
+In composition, move and copy functions must handle contained objects properly, often needing deep copies or moves. In aggregation, pointers or references need careful management to avoid double deletion or memory leaks.
+Managing memory and resource in move operations was challenging. I used `std::move` and ensured valid states for moved-from objects.
+
+In short, this workshop enhanced my understanding of these key concepts and improved my C++ skills.
+
+Composition:
+Although not explicitly present in the code, an example would be if `Restaurant` directly created and managed `Reservation` objects:
+class Restaurant {
+    Reservation* res;
+    size_t cnt;
+public:
+    Restaurant() {
+        res = new Reservation[10]; // Example of composition
+        cnt = 10;
+    }
+    ~Restaurant() {
+        delete[] res;
+    }
+};
+Aggregation:
+The `Restaurant` class aggregates `Reservation` objects:
+class Restaurant {
+    Reservation* res;
+    size_t cnt;
+public:
+    Restaurant(const Reservation* reservations[], size_t cnt) {
+        res = new Reservation[cnt];
+        for (size_t i = 0; i < cnt; ++i) {
+            res[i] = *reservations[i];
+        }
+        this->cnt = cnt;
+    }
+    ~Restaurant() {
+        delete[] res;
+    }
+};
+
+
+Association:
+Association is used in the `main` function where `Restaurant` and `ConfirmationSender` interact with `Reservation` objects:
+Code showing association with Reservation objects:
+    Restaurant res(reservations, cnt);
+    ConfirmationSender confirmations;
+    confirmations += *reservations[4];
+    confirmations += *reservations[7];
+}
+
+

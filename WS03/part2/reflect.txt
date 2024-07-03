@@ -1,0 +1,57 @@
+/*
+Name:Naveen Mathew
+StudentID : 1646464218
+mail: nmathew11@myseneca.ca
+Date: 02-06-2024
+
+I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my workshops and assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
+
+*/
+
+
+Explain why it was necessary for you to add the members that you added into the Book class ?
+In member functions we used to getters to access the member variables that are in private. and also overloaded > and < to compare pagesPerChapter in books
+bool isValid() const;
+        // Getter for the book title
+        std::string getTitle() const;
+        // Getter for the number of chapters
+        unsigned getChapters() const;
+        // Getter for the number of pages
+        unsigned getPages() const;
+        // Calculates the average number of pages per chapter
+        double pagesPerChapter() const;
+        // Equality operator to compare two books
+        bool operator==(const Book& other) const;
+        // Inequality operator to compare two books
+        bool operator!=(const Book& other) const;
+        // Less than operator to compare two books based on pages per chapter ratio
+        bool operator<(const Book& other) const;
+        // Greater than operator to compare two books based on pages per chapter ratio
+        bool operator>(const Book& other) const;
+};
+explain why these functions cannot be querries, even though they do not change value.
+
+ The functions getSmallestItem and getLargestItem, which operate on static member variables and reflect an aggregated state based on the collective actions across all instances of the class, cannot be regarded as simple queries. Instead, they return the smallest and largest items stored in the class attributes m_smallestItem and m_largestItem, respectively.
+
+What is the reason for defining the class objects outside the class definition?
+To ensure proper template instantiation and avoid multiple definitions, which improves readability and maintainability.
+template <typename T, unsigned C>
+T Collection<T, C>::m_smallestItem = 9999;
+What is the reason for specializing the definition of m_smallestItem and m_largestItem objects for Book and 10.
+To provide meaningful default values that reflect extreme conditions relevant to Book collections of capacity 10.
+template <>
+Book Collection<Book, 10>::m_smallestItem = Book("", 1, 10000);
+template <>
+Book Collection<Book, 10>::m_largestItem = Book("", 10000, 1);
+m_smallestItem and m_largestItem objects are also initialized for Book and 72. Is this initilization necessary? Why?
+Necessary to ensure the correct behavior of Book collections with a capacity of 72, maintaining consistency across different template instantiations.
+template <>
+Book Collection<Book, 72>::m_smallestItem = Book("", 1, 10000);
+template <>
+Book Collection<Book, 72>::m_largestItem = Book("", 10000, 1);
+
+C++ implements parametric (or generic) polymorphism through templates.
+The structure of each templated class or function is independent of the type(s) involved. By defining that structure in a generic form we can reduce code duplication significantly. The compiler generates the class and function definitions from our templates for the types that we specify explicitly.
+
+
+

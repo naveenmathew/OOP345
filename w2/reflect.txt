@@ -1,0 +1,18 @@
+/*
+Name: Naveen Mathew
+Mail: nmathew11@myseneca.ca
+ID: 164646218
+Date : 19-05-2024
+
+I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my workshops and assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
+*/
+
+Prof, I felt perplexed when i start the the project since i missed my first few classes  due to enrollment issues,by the by i started liking  c ++programming when we get into deep into the backend function.
+Basically, this project or workshop was a quick memory reflex test of OOP244 . last semester ended with rule of three and this semster started with rule of 3 and moving towards rule 5.
+Rule of three consists of 3 member function(also known as rule of thumb) that is copy constructor, copy assignment operator and destructor.
+The part were i confused is  writing prototype for main (int main(int argc, char* argv[]);) but i figured it out by listening to class and searching on external website to better clarification
+The first parameter, argc (argument count) is an integer that indicates how many arguments were entered on the command line when the program was started. The second parameter, argv (argument vector), is an array of pointers to arrays of character objects.
+
+
+
+Reference: https://www.ibm.com/docs/en/i/7.4?topic=functions-main-function

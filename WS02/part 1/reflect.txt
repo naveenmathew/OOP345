@@ -1,0 +1,12 @@
+/*
+Name:Naveen Mathew
+StudentID : 1646464218
+mail: nmathew11@myseneca.ca
+Date: 15-03-2024
+*/
+
+
+Workshop 6  focussed on classes and resources.In the first workshop  that  created 2 classes and keep  first classes member variable and 
+member function private. As a result, forward declared the emailfile class and dissalow constructor , To use the email class i create a 
+function in email function like  (friend class EmailFile;). This workshop made me realize giving up is not an option.
+
